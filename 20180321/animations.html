@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS3動畫練習</title>
+	<!--example1-->
+	<style type="text/css">
+		/* 動畫程式碼 */
+		@keyframes animation1 {
+		    from {background-color: red;} /*從紅色*/
+		    to {background-color: yellow;} /*轉換到黃色*/
+		}
+
+		/* 將元素加上動畫 */
+		.example1 {
+		    width: 100px;
+		    height: 100px;
+		    background-color: red;
+		    animation:animation1 4s infinite; /*參數依序為：套用動畫名稱 秒數 循環*/
+		}	
+	</style>
+	<!--./example1-->
+	<!--example2-->
+	<style type="text/css">
+		/* 動畫程式碼 */
+		@keyframes animation2 {
+		    0%   {background-color: white;} /*使用%代表顏色停留時間*/
+		    100% {background-color: black;}
+		}
+		/* 將元素加上動畫 */
+		.example2 {
+		    width: 100px;
+		    height: 100px;
+		    animation:animation2 3s infinite; /*參數依序為：套用動畫名稱 秒數 循環*/
+		}	
+	</style>
+	<!--./example2-->
+	<!--example3-->
+	<style type="text/css">
+		/* 動畫程式碼 */
+		@keyframes animation3 {
+		    0%   {background-color:red; left:0px; top:0px;}
+		    25%  {background-color:yellow; left:200px; top:0px;}
+		    50%  {background-color:blue; left:200px; top:200px;}
+		    75%  {background-color:green; left:0px; top:200px;}
+		    100% {background-color:red; left:0px; top:0px;}
+		}
+
+		/*-webkit開頭是為了兼容 Safari 4.0 - 8.0 */
+		@-webkit-keyframes animation3 {
+		    0%   {background-color:red; left:0px; top:0px;}
+		    25%  {background-color:yellow; left:200px; top:0px;}
+		    50%  {background-color:blue; left:200px; top:200px;}
+		    75%  {background-color:green; left:0px; top:200px;}
+		    100% {background-color:red; left:0px; top:0px;}
+		}
+		/* 將元素加上動畫 */
+		.example3 {
+		 	width: 50px;
+		    height: 50px;
+		    background-color: red;
+		    position: relative;
+		    -webkit-animation: animation3 4s infinite;
+		    animation: animation3 4s infinite;
+		}	
+
+	</style>
+	<!--./example3-->
+	<!--example4-->
+	<style type="text/css">
+	
+		/* 動畫程式碼 */
+		@keyframes animation4 {
+		    from {left: 0px;}
+    		to {left: 300px;}
+		}
+
+		/*-webkit開頭是為了兼容 Safari 4.0 - 8.0 */
+		@-webkit-keyframes animation4 {
+		    from {left: 0px;}
+   			to {left: 300px;}
+		}
+		/* 將元素加上動畫 */
+		.example4 {
+			animation-timing-function: linear;
+		 	width: 50px;
+		    height: 50px;
+		    background-color: red;
+		    position: relative;
+		    -webkit-animation: animation4 4s infinite;
+		    -webkit-animation-direction: alternate-reverse; /* Safari 4.0 - 8.0 */
+		    animation: animation4 4s infinite;
+			animation-direction: alternate;    
+			
+		}	
+
+	</style>
+	<!--./example4-->
+
+</head>
+<body>
+	<h1>CSS3動畫練習</h1>
+	<h2>範例1：使用animation與keyframes呈現顏色轉換。</h2>
+	利用keyframes內撰寫from to 套用至div tag上，呈現每4秒從紅轉成黃的動畫效果。
+	<div class="example1">
+		
+	</div>
+	css部分：
+	<xmp>
+		/* 動畫程式碼 */
+		@keyframes animation1 {
+		    from {background-color: red;} /*從紅色*/
+		    to {background-color: yellow;} /*轉換到黃色*/
+		}
+
+		/* 將元素加上動畫 */
+		.example1 {
+		    width: 100px;
+		    height: 100px;
+		    animation:animation1 4s infinite; /*參數依序為：套用動畫名稱 秒數 循環*/
+		}	
+	</xmp>
+	html部分：
+	
+	<xmp>
+	<div class="example1">
+	</div>	
+	</xmp>
+	<h2>範例2：使用animation與keyframes呈現顏色轉換（使用%）。</h2>
+	利用keyframes內撰寫 % 套用至div tag上，呈現每3秒從白轉成黑的動畫效果。
+	<div class="example2">
+		
+	</div>
+	css部分：
+	<xmp>
+		/* 動畫程式碼 */
+		@keyframes animation2 {
+		    0%   {background-color: white;} /*使用%代表顏色停留時間*/
+		    100% {background-color: black;}
+		}
+		/* 將元素加上動畫 */
+		.example2 {
+		    width: 100px;
+		    height: 100px;
+		    background-color: red;
+		    animation:animation2 3s infinite; /*參數依序為：套用動畫名稱 秒數 循環*/
+		}	
+	</xmp>
+	html部分：
+		
+	<xmp>
+	<div class="example3">
+	</div>	
+	</xmp>
+	<h2>範例3：使用animation讓方塊繞四個角。</h2>
+	利用keyframes內撰寫每個%的位置套用至div tag上，呈現4秒繞4個角的效果。<br>
+	ps.不支援Internet Explorer 9 and earlier versions.
+	<div class="example3">
+		
+	</div>
+	css部分：
+	<xmp>
+		/* 動畫程式碼 */
+		@keyframes animation3 {
+		    0%   {background-color:red; left:0px; top:0px;}
+		    25%  {background-color:yellow; left:200px; top:0px;}
+		    50%  {background-color:blue; left:200px; top:200px;}
+		    75%  {background-color:green; left:0px; top:200px;}
+		    100% {background-color:red; left:0px; top:0px;}
+		}
+
+		/*-webkit開頭是為了兼容 Safari 4.0 - 8.0 */
+		@-webkit-keyframes animation3 {
+		    0%   {background-color:red; left:0px; top:0px;}
+		    25%  {background-color:yellow; left:200px; top:0px;}
+		    50%  {background-color:blue; left:200px; top:200px;}
+		    75%  {background-color:green; left:0px; top:200px;}
+		    100% {background-color:red; left:0px; top:0px;}
+		}
+		/* 將元素加上動畫 */
+		.example3 {
+		    width: 50px;
+		    height: 50px;
+		    background-color: red;
+		    position: relative;
+		    -webkit-animation: animation3 4s infinite;
+		    animation: animation3 4s infinite;
+		}	
+	</xmp>
+	html部分：
+		
+	<xmp>
+	<div class="example3">
+	</div>	
+	</xmp>
+	<h2>範例4：使用animation搭配物理linear等速效果，動畫從前到後，再從後到前。</h2>
+	使用animation搭配物理效果與動畫反轉。<br>
+	ps.不支援Internet Explorer 9 and earlier versions.
+	<div class="example4">
+		
+	</div>
+	css部分：
+	<xmp>
+		/* 動畫程式碼 */
+		@keyframes animation4 {
+			from {left: 0px;}
+   			to {left: 300px;}
+		}
+
+		/*-webkit開頭是為了兼容 Safari 4.0 - 8.0 */
+		@-webkit-keyframes animation4 {
+			from {left: 0px;}
+   			to {left: 300px;}
+		}
+		/* 將元素加上動畫 */
+		.example4 {
+			animation-timing-function: linear;
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			position: relative;
+			-webkit-animation: animation4 4s infinite;
+			-webkit-animation-direction: alternate-reverse; /* Safari 4.0 - 8.0 */
+			animation: animation4 4s infinite;
+			animation-direction: alternate;   /*從前到後再由後到前*/ 
+		}	
+	</xmp>
+	html部分：	
+	<xmp>
+	<div class="example4">
+	</div>	
+	</xmp>
+</body>
+</html>
