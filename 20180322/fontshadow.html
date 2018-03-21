@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文字陰影</title>
+	<style type="text/css">
+		/* 動畫程式碼 */
+		@keyframes animation1 {
+		    0% {background-color: #FF4365;} 
+		    25% {background-color: #FC9D99;} 
+		    50% {background-color: #F9CCAD;} 
+		    75% {background-color: #C8C8A9;} 
+			100% {background-color: #84AF9B;} 
+		}
+		/* 將元素加上動畫 */
+		.example1 {
+		    background-color: red;
+		    animation:animation1 10s infinite; /*參數依序為：套用動畫名稱 秒數 
+		    循環*/
+			animation-direction: alternate;    
+
+		}
+
+		/*文字陰影*/
+		.font-shadow{
+			color: white;
+			text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+		}	
+	</style>
+</head>
+<body  class="example1">
+<b class="font-shadow" style="font-size: 50px;">最新消息</b>
+<h1 class="font-shadow">最新消息</h1>
+<h2 class="font-shadow">最新消息</h2>
+<h3 class="font-shadow">最新消息</h3>
+<h4 class="font-shadow">最新消息</h4>
+</body>
+</html>
