@@ -3,6 +3,7 @@
 
 ### 20180322
 * 文字陰影 成果：[點我查看](https://unromanticman.github.io/CSS/20180322/fontshadow)
+* 練習使用SASS，發現巢狀的寫法還不錯，只是必須要“編譯”就很麻煩，沒辦法立即就用上，這點在切版時很傷，除非寫一個自動編譯的小程式每0.5秒編譯一次。而使用SASS讓CSS確實比較好維護，相較於以前下覆蓋上而言，若是要長期維護的版型使用確實還不錯，可以免除每次要改版就得replace一堆標籤的style。成果：[點我查看](https://unromanticman.github.io/CSS/20180322/sass)
 
 
 

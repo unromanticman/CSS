@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SASS練習</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<div>
+	<a>測試</a>
+</div>
+<xmp>
+安裝SASS
+gem install sass
+將sass編譯成css
+sass main.scss main.css
+
+SASS程式碼：
+// 引用
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+//Add variables here:
+
+$color1: #F1F8FF;
+$color2: #E6EBF1;
+
+div{
+	background:$color1;
+	a{
+		background:$color2;
+	}
+}
+</xmp>
+</body>
+</html>

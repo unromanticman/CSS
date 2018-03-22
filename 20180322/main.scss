@@ -1,0 +1,14 @@
+// 引用
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+//Add variables here:
+
+//變數1
+$color1: #F1F8FF;
+$color2: #E6EBF1;
+
+div{
+	background:$color1;
+	a{
+		background:$color2;
+	}
+}
