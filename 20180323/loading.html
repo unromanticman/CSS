@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Loading製作</title>
+	<style type="text/css">
+	@-webkit-keyframes loading {
+		from {
+			-webkit-transform: rotate(0deg);
+		}
+		to {
+			-webkit-transform: rotate(360deg);
+		}
+	}
+	@-moz-keyframes loading {
+		from {
+			-moz-transform: rotate(0deg);
+		}
+		to {
+			-moz-transform: rotate(360deg);
+		}
+	}
+	@-o-keyframes loading {
+		from {
+			-o-transform: rotate(0deg);
+		}
+		to {
+			-o-transform: rotate(360deg);
+		}
+	}
+	@keyframes loading {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.loading {
+		border: 3px solid #3a3;
+		height: 100%;
+		width: 100%;
+		border-radius: 50%; /*形成一個圓*/
+		border-left: 3px solid #fff;
+		border-top: 3px solid #fff;
+
+		-webkit-animation: loading 1s infinite linear;
+		-moz-animation: loading 1s infinite linear;
+		-o-animation: loading 1s infinite linear;
+		animation: loading 1s infinite linear;
+	}
+	.loadingUI{
+		position: relative;
+		height: 50px;
+		width: 50px;
+	}
+	
+	</style>
+</head>
+<body>
+	<h1>CSS Loading製作</h1>
+	<div class="loadingUI">
+		<div class="loading"></div>
+	</div>
+</body>
+</html>
