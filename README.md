@@ -1,6 +1,9 @@
 # CSS
 此repository用於紀錄CSS練習使用
 
+### 20180328
+* 實作Triggle CSS 捲動練習 成果：[點我查看](https://unromanticman.github.io/CSS/20180328/TriggerCSSAnimationsonScroll)
+
 ### 20180323
 * 練習使用CSS製作Loading載入動態圖 成果：[點我查看](https://unromanticman.github.io/CSS/20180323/loading)
 

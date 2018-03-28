@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trigger CSS Animations on Scroll</title>
+	<link rel="stylesheet" href="./animate.css">
+	<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+	<script type="text/javascript" src="./jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		body{
+			overflow-x: hidden;
+		}
+		.disp-show{
+			visibility: visible;
+		}
+		.disp-hide{
+			visibility: hidden;	
+		}
+	</style>
+</head>
+<body>
+	<div style="text-align: center;">
+		<div><h1>自我介紹</h1></div>
+		<div data-animation="flipInX" class="revealOnScroll disp-hide" data-timeout="400"><h1>林郁翔</h1></div>
+		<div><h2>內容1</h2></div>
+		<div><h2>內容2</h2></div>
+		<div><h2>內容3</h2></div>
+		<div><h3>內容1</h3>
+			<p>這是一些產品內容</p>
+			<p>這是一些產品內容</p>
+			<p>這是一些產品內容</p>
+			<p>這是一些產品內容</p>
+		</div>
+		<div><h3>內容2</h3>
+			<p>這是一些產品內容</p>
+			<p>這是一些產品內容</p>
+			<p>這是一些產品內容</p>
+			<p>這是一些產品內容</p>
+		</div>
+		<div><h3>內容3</h3>
+			<img data-animation="flipInX" class="revealOnScroll disp-hide" data-timeout="400" src="./image.jpg" width="600">
+			<p>這是一些產品內容</p>
+			<p>這是一些產品內容</p>
+			<p>這是一些產品內容</p>
+		</div>
+		<div><h3>內容3</h3>
+			<p data-animation="fadeInLeft" class="revealOnScroll disp-hide" data-timeout="400">這是一些產品內容</p>
+			<p data-animation="fadeInRight" class="revealOnScroll disp-hide" data-timeout="400">這是一些產品內容</p>
+			<p>這是一些產品內容</p>
+			<p>這是一些產品內容</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function() {
+
+	  var $window           = $(window),
+	      win_height_padded = $window.height() * 1.1,
+	      isTouch           = Modernizr.touch;
+
+	  if (isTouch) { $('.revealOnScroll').addClass('animated'); }
+
+	  $window.on('scroll', revealOnScroll);
+
+	  function revealOnScroll() {
+	    var scrolled = $window.scrollTop(),
+	        win_height_padded = $window.height() * 1.1;
+
+	    // Showed...
+	    $(".revealOnScroll:not(.animated)").each(function () {
+	      var $this     = $(this),
+	          offsetTop = $this.offset().top;
+
+	      if (scrolled + win_height_padded > offsetTop) {
+	        if ($this.data('timeout')) {
+	         	$this.removeClass('disp-hide');
+	          	$this.addClass('disp-show');
+		        window.setTimeout(function(){
+		            $this.addClass('animated ' + $this.data('animation'));
+		        }, parseInt($this.data('timeout'),10));
+	        } else {
+	          $this.addClass('animated ' + $this.data('animation'));
+
+	        }
+	      }
+	    });
+
+	    // Hidden...
+	   $(".revealOnScroll.animated").each(function (index) {
+	      var $this     = $(this),
+	          offsetTop = $this.offset().top;
+	      if (scrolled + win_height_padded < offsetTop) {
+	        $(this).removeClass('animated fadeInUp flipInX lightSpeedIn')
+	      }
+	    });
+	  }
+
+	  revealOnScroll();
+	});
+</script>
+</html>
